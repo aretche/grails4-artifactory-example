@@ -39,7 +39,14 @@ apply plugin:"com.bertramlabs.asset-pipeline"
 apply plugin:"com.jfrog.artifactory"
 
 repositories {
-    maven { url "https://repo.grails.org/grails/core" }
+    maven {
+        // maven { url "https://repo.grails.org/grails/core" }
+        url "${artifactory_url}/local-grails-core"
+        credentials {
+            username "${artifactory_user}" // Optional resolver user name (leave out to use anonymous resolution)
+            password "${artifactory_password}" // The resolver password
+        }
+    }
 }
 
 configurations {
