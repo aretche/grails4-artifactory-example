@@ -1,6 +1,13 @@
 buildscript {
     repositories {
-        maven { url "https://repo.grails.org/grails/core" }
+        maven {
+            url "http://localhost/artifactory/local-repo"
+            // The Artifactory (preferably virtual) repository to resolve from
+            credentials {
+                username "admin" // Optional resolver user name (leave out to use anonymous resolution)
+                password "password" // The resolver password
+            }
+        }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
