@@ -8,12 +8,21 @@ buildscript {
                 password "${artifactory_password}" // The resolver password
             }
         }
+        maven {
+            // maven { url "https://jcenter.bintray.com" }
+            url "${artifactory_url}/local-jcenter"
+            credentials {
+                username "${artifactory_user}" // Optional resolver user name (leave out to use anonymous resolution)
+                password "${artifactory_password}" // The resolver password
+            }
+        }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate5:7.0.0"
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.0"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.0.10"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.10.0"
     }
 }
 
@@ -27,6 +36,7 @@ apply plugin:"org.grails.grails-web"
 apply plugin:"com.github.erdi.webdriver-binaries"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"com.bertramlabs.asset-pipeline"
+apply plugin:"com.jfrog.artifactory"
 
 repositories {
     maven { url "https://repo.grails.org/grails/core" }
