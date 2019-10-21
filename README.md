@@ -4,7 +4,8 @@
 
 ## Features
 
-* Uses local Artifactory repo to cache dependencies at build, test and runtime.
+* Uses an Artifactory repo to cache dependencies at build, test and runtime.
+* Uses an Artifactory repo to cache gradle-wrapper binaries
 * Uses local Artifactory repo to store gradle cache objects
 * TODO: Use local Artifactory repo to publish jar and war
 
@@ -13,12 +14,13 @@
 * build.gradle
 * gradle.properties
 * settings.gradle
+* gradle/wrapper/gradle-wrapper.properties
 
 ## Requisites
 
 Artifactory OSS runnig in http://localhost with default credentials (user='admin', password='password')
 
-You could run a local with [docker-compose](https://docs.docker.com/compose/) using [Artifactory's examples repo](https://github.com/jfrog/artifactory-docker-examples):
+You could run a local instance with [docker-compose](https://docs.docker.com/compose/) using [Artifactory's examples repo](https://github.com/jfrog/artifactory-docker-examples):
 
 ```
 git clone https://github.com/jfrog/artifactory-docker-examples.git
@@ -33,6 +35,6 @@ Create repositories in Artifactory:
 
 * Remote Maven repository with key 'local-grails-core' pointing to https://repo.grails.org/grails/core
 * Remote Maven repository with key 'local-jcenter' pointing to https://jcenter.bintray.com
-* Anonymous access enabled remote Maven repository with key 'gradle-services' pointing to http://services.gradle.org
+* *Anonymous access enabled* remote Maven repository with key 'gradle-services' pointing to http://services.gradle.org
 * Local Generic repository with key 'example-repo-local'
 
