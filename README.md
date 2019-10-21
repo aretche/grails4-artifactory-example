@@ -33,6 +33,6 @@ Create repositories in Artifactory:
 
 * Remote Maven repository with key 'local-grails-core' pointing to https://repo.grails.org/grails/core
 * Remote Maven repository with key 'local-jcenter' pointing to https://jcenter.bintray.com
-* Remote Maven repository with key 'gradle-services' pointing to http://services.gradle.org
+* Anonymous access enabled remote Maven repository with key 'gradle-services' pointing to http://services.gradle.org
 * Local Generic repository with key 'example-repo-local'
 

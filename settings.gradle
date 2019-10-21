@@ -7,10 +7,10 @@ buildCache {
         enabled = false
     }
     remote(HttpBuildCache) {
-        url = "${artifactory_url}/example-repo-local/"
+        url = "${artifactoryUrl}/example-repo-local/"
         credentials {
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
+            username = "${artifactoryUser}"
+            password = "${artifactoryPassword}"
         }
         push = isPush
     }

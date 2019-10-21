@@ -2,18 +2,18 @@ buildscript {
     repositories {
         maven {
             // maven { url "https://repo.grails.org/grails/core" }
-            url "${artifactory_url}/local-grails-core"
+            url "${artifactoryUrl}/local-grails-core"
             credentials {
-                username "${artifactory_user}" // Optional resolver user name (leave out to use anonymous resolution)
-                password "${artifactory_password}" // The resolver password
+                username "${artifactoryUser}" // Optional resolver user name (leave out to use anonymous resolution)
+                password "${artifactoryPassword}" // The resolver password
             }
         }
         maven {
             // maven { url "https://jcenter.bintray.com" }
-            url "${artifactory_url}/local-jcenter"
+            url "${artifactoryUrl}/local-jcenter"
             credentials {
-                username "${artifactory_user}" // Optional resolver user name (leave out to use anonymous resolution)
-                password "${artifactory_password}" // The resolver password
+                username "${artifactoryUser}" // Optional resolver user name (leave out to use anonymous resolution)
+                password "${artifactoryPassword}" // The resolver password
             }
         }
     }
@@ -41,10 +41,10 @@ apply plugin:"com.jfrog.artifactory"
 repositories {
     maven {
         // maven { url "https://repo.grails.org/grails/core" }
-        url "${artifactory_url}/local-grails-core"
+        url "${artifactoryUrl}/local-grails-core"
         credentials {
-            username "${artifactory_user}" // Optional resolver user name (leave out to use anonymous resolution)
-            password "${artifactory_password}" // The resolver password
+            username "${artifactoryUser}" // Optional resolver user name (leave out to use anonymous resolution)
+            password "${artifactoryPassword}" // The resolver password
         }
     }
 }
